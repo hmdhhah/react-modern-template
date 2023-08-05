@@ -1,0 +1,100 @@
+.select {
+    .select__dropdown-indicator {
+        padding-right: 12px;
+    }
+
+    .select__value-container {
+        padding-left: 10px;
+    }
+
+    .select__single-value {
+        color: #121215;
+        font-size: 14px;
+        font-weight: 200;
+        letter-spacing: -0.24px;
+        line-height: 20px;
+    }
+
+    .select__placeholder {
+        color: #a2a2a3;
+        font-size: 14px;
+        font-weight: 200;
+        opacity: 0.5;
+    }
+
+    .select__control {
+        background-color: #fff;
+        border-color: #d4d4d5;
+        border-radius: 6px;
+        border-style: solid;
+        cursor: default;
+        min-height: 32px;
+        -webkit-transition: box-shadow 0.2s, border-color 0.2s;
+        transition: box-shadow 0.2s, border-color 0.2s;
+
+        &:hover {
+            border-color: #d4d4d5;
+        }
+
+        &.select__control--is-focused {
+            border-color: #345df8;
+            box-shadow: 0 0 0 2px rgba(52, 93, 248, 0.15);
+        }
+    }
+
+    &.select--s {
+        .select__control {
+            min-height: 28px;
+        }
+    }
+
+    &.invalid {
+        .select__control {
+            border-color: #f40d0d;
+            box-shadow: 0 0 0 1px #f40d0d;
+            color: #f40d0d;
+
+            &.select__control--is-focused {
+                border-color: red;
+                box-shadow: 0 0 0 1px #f40d0d;
+            }
+        }
+    }
+}
+
+.select__menu {
+    margin-bottom: 4px;
+    margin-top: 4px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 22px 0 rgba(18, 18, 21, 0.1),
+        0 4px 12px 0 rgba(18, 18, 21, 0.08);
+
+    .select__menu-list {
+        max-height: 200px;
+    }
+
+    .select__option {
+        border-radius: 6px;
+        padding: 6px 10px;
+        color: #121215;
+        font-size: 13px;
+        letter-spacing: -0.24px;
+        line-height: 18px;
+        cursor: pointer;
+        margin-bottom: 2px;
+
+        &:first-child {
+            margin-top: 6px;
+        }
+
+        &.select__option--is-selected {
+            background-color: #f2f2f3;
+        }
+
+        &:hover,
+        &.select__option--is-focused {
+            background-color: #f6f5f5;
+        }
+    }
+}

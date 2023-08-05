@@ -1,0 +1,59 @@
+.button {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  color: $neutrals-25;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &.primary {
+    background-color: $primary-blue;
+  }
+
+  &.outlined {
+    border: 1.2px solid $neutrals-200;
+    color: $neutrals-900;
+  }
+
+  &.text {
+    color: $neutrals-500;
+  }
+
+  &.ghost {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    height: auto;
+  }
+
+  &.fullWidthBtn {
+    width: 100%;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &.sm {
+    height: 28px;
+  }
+
+  &.md {
+    height: 34px;
+  }
+
+  &.lg {
+    height: 40px;
+  }
+
+  &.xl {
+    height: 48px;
+  }
+}

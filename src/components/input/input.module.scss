@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: none;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1.2px solid $neutrals-200;
+  color: $neutrals-900;
+  transition: all 0.2s linear;
+  margin-left: 0 !important;
+
+  &:focus-within {
+    border-color: $primary-blue;
+    box-shadow: 0px 0px 0px 2px rgba(98, 86, 254, 0.25);
+  }
+
+  &::placeholder {
+    color: $neutrals-500;
+  }
+
+  &.size-l {
+    height: 48px;
+  }
+}
+
+.inputLabel {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.034px;
+  margin-bottom: 6px;
+}
+
+
+
+
+/* Target the input field and remove the background color on autofill */
+.MuiInput-input:-webkit-autofill {
+  /* Set the background color to transparent or your desired color */
+  -webkit-box-shadow: 0 0 0 100px white inset;
+  /* Other styles you may want to remove or modify */
+  border-radius: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background-color: #fff;
+}
+
+/* Target the input placeholder and remove the background color on autofill */
+.MuiInput-input:-webkit-autofill::placeholder {
+  /* Set the background color to transparent or your desired color */
+  -webkit-text-fill-color: inherit;
+}

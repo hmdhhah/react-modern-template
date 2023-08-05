@@ -1,0 +1,282 @@
+.root {
+  background-color: #f8f7f8;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  flex-grow: 1;
+  box-shadow: -1px 0px 0px 0px #e9e9ea inset;
+  padding: 12px;
+  max-width: 240px;
+
+  &.collapse {
+    .rootInner {
+      width: 60px;
+      transition: width ease-in 250ms;
+
+      &:hover {
+        width: 240px;
+        transition: width ease-out 250ms;
+
+        .link_item_label,
+        .bottom {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      .link_item_label,
+      .bottom,
+      .collapseBtn {
+        transition: opacity 600ms;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+
+  .actionBtn {
+    position: absolute;
+    left: 180px;
+    top: 14px;
+    z-index: 10;
+    // display: none;
+  }
+
+  .expandBtnWrap {
+    z-index: 11;
+    background-color: #fff;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.is_mobile {
+    .app_logo_wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+
+      height: 60px;
+      box-shadow: inset 0 -1px 0 0 #e0e1e4;
+
+      .app_logo {
+        margin-left: 0;
+      }
+    }
+
+    .menu_list {
+      padding-top: 25px;
+    }
+  }
+}
+
+.app_logo_wrap {
+  padding: 4px;
+}
+
+.menu_list {
+  margin-top: 36px;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 216px;
+  white-space: nowrap;
+  height: 100vh;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain;
+
+  @media screen and (max-width: 420px) {
+    width: 100vw;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu_item {
+    margin-bottom: 4px;
+    position: relative;
+
+    &.have_space {
+      margin-bottom: 14px;
+    }
+
+    &.have_divider {
+      width: 100%;
+      border-top: 1px solid #ececed;
+      padding-top: 16px;
+    }
+
+    &.have_heading {
+      border-top: 1px solid #ececed;
+      padding-top: 56px;
+      user-select: none;
+
+      &::before {
+        content: 'ORGANIZATION';
+        position: absolute;
+        top: 20px;
+        left: 12px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14px;
+        letter-spacing: 0.24px;
+        text-transform: uppercase;
+        color: $neutrals-500;
+        user-select: none;
+      }
+    }
+  }
+
+  .divider_item {
+    margin-top: 16px;
+    margin-bottom: 12px;
+  }
+
+  .link_item {
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: #0e041a;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+    line-height: 20px;
+    transition: background-color 0.1s;
+    text-decoration: none;
+
+    .iconWrap {
+      margin-right: 8px;
+      color: #656368;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &.active {
+      background-color: $primary-blue;
+      color: #fbfbfb;
+
+      svg {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.bottom {
+  align-self: end;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  flex-shrink: 0;
+  z-index: 11;
+  width: 240px;
+  padding-top: 20px;
+  background-color: #f8f7f8;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media screen and (max-width: 420px) {
+    width: 100%;
+  }
+
+  .dropdownMetaInfoWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    margin-bottom: 25px;
+  }
+}
+
+.mobBottom {
+  align-self: end;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  flex-shrink: 0;
+  z-index: 9;
+  width: 60px;
+  padding-top: 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .adminSwitchCompactView {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    width: 28px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(18, 18, 21, 0.08);
+    margin: 0 18px 26px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .clientChooseBtn {
+    border-top: 1px solid #ececed;
+    padding: 18px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.closeIcon {
+  svg {
+    color: #121215;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.expandBtn,
+.collapseBtn {
+  width: 28px;
+  height: 28px;
+
+  &:hover {
+    background-color: #f2f2f3;
+  }
+}
+
+.logoutBtn {
+  color: #0e041a;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: -0.25px;
+  line-height: 20px;
+  text-align: right;
+  cursor: pointer;
+
+  svg {
+    margin-right: 4px;
+  }
+}
