@@ -62,7 +62,7 @@ Some important directories in this repository include:
 
 ## Requirements
 
-- Node v19.3.0
+- Node v20.10.0
 - Yarn v1.22.19
 - npm v9.2.0
 - Git
